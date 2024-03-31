@@ -13,7 +13,9 @@
 Выполните команду ```terraform validate```. Объясните, в чём заключаются намеренно допущенные ошибки. Исправьте их.
 
 Исправил строку resource "docker_image" { на resource "docker_image" "nginx"{
+
 Была допущена ошибка в именовании контейнера - 1nginx, что не допускается, т.к. имя должно начинаться с буквы или символа подчёркивания.
+
 Также ошибки в строке name  = "example_${random_password.random_string_FAKE.resulT}" , исправил на name  = "example_${random_password.random_string.result}"
 
 5. Выполните код. В качестве ответа приложите: исправленный фрагмент кода и вывод команды ```docker ps```.
